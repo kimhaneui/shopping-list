@@ -1,9 +1,16 @@
 import { useParams } from 'react-router-dom'
+import styled from 'styled-components'
+
+let YellowBtn = styled.button`
+  background : ${props => props.bg};
+  color : black;
+  padding : 10px;
+`;
 
 function Detail(props){
   let {id} = useParams();
-  console.log(id,'id')
-  
+  let product = props.shoes.find(x=>x.id === id);
+ 
   return(
       <div className="container">
         <div className="row">
@@ -11,11 +18,15 @@ function Detail(props){
             <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="100%" />
           </div>
           <div className="col-md-6 mt-4">
-            <h4 className="pt-5">{props.shoes[0].title}</h4>
-            <p>{props.shoes[0].content}</p>
-            <p>{props.shoes[0].price}원</p>
+            <h4 className="pt-5">{product.title}</h4>
+            <p>{product.content}</p>
+            <p>{product.price}원</p>
             <button className="btn btn-danger">주문하기</button>
           </div>
+          <div>
+        <YellowBtn bg="orange">오렌지색 버튼임</YellowBtn>
+        <YellowBtn bg="blue">파란색 버튼임</YellowBtn>
+    </div>
         </div> 
       </div> 
     )

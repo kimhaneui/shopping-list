@@ -23,8 +23,8 @@ function App() {
       <Navbar bg="light" variant="light">
         <Container>
         <Nav className="me-auto">
-        <button onClick={()=>{ navigate('/') }}>Home</button> 
-        <button onClick={()=>{ navigate('/detail') }}>상세페이지</button>
+        <Nav.Link onClick={()=>{ navigate('/') }}>Home</Nav.Link>
+        <Nav.Link onClick={()=>{ navigate('/cart') }}>장바구니</Nav.Link>
         <Nav.Link onClick={()=>{navigate(-1)}}>뒤로가기</Nav.Link>
         </Nav>
         </Container> 
@@ -45,7 +45,7 @@ function App() {
           </div>
           </>
          } />
-        <Route path="/detail" element={ <Detail shoes={shoes}/> }/> 
+        <Route path="/detail/:id" element={ <Detail shoes={shoes}/> }/> 
         <Route path="/about" element={ <About/>} />
         <Route path="*" element={ <div>없는페이지임</div> } />
       </Routes>
