@@ -4,7 +4,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios'
 import { Routes,Route,useNavigate } from 'react-router-dom';
-import { useQuery } from '@tanstack/react-query'
+import {useQuery} from 'react-query'
 import data from './data.js';
 import Detail from './routes/Detail.js'
 import About from './routes/About.js'
@@ -17,11 +17,13 @@ function App() {
   let [btn , btnUpdate] = useState(1);
   let navigate = useNavigate();
   let [stock, stockUpdate] = useState([10,11,12]);
-
   let result = useQuery('작명', ()=>
     axios.get('https://codingapple1.github.io/userdata.json')
     .then((a)=>{ return a.data })
   )
+  //Profiler 성능측정 
+
+
   useEffect(() => {
   fetch('https://fakestoreapi.com/products')
   .then(res=>res.json())
