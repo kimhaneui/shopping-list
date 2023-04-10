@@ -1,14 +1,10 @@
 import { useParams } from 'react-router-dom'
 import styled from 'styled-components'
-<<<<<<< HEAD
-import {useState,useEffect} from 'react'
-=======
 import {Nav} from 'react-bootstrap'
 import {useState,useEffect, useContext} from 'react'
 import { useSelector, useDispatch } from "react-redux"
 import { StockContext } from './../App.js'
 import { addItem } from '../store/store.js'
->>>>>>> hn
 
 let YellowBtn = styled.button`
   background : ${props => props.bg};
@@ -20,28 +16,6 @@ function Detail(props){
   let {stock} = useContext(StockContext)
 
   let {id} = useParams();
-<<<<<<< HEAD
-  console.log(id,props);
-  let [count, setCount] = useState(0);
-  let [alert, setAlert] = useState(true);
-  let product = props.shoes.find(function(x){
-    return x.id == id
-  });
-  useEffect(() => {
-    let a = setTimeout(()=>{setAlert(false)},2000)
-    return ()=>{
-      clearTimeout(a)
-    }
-  },[count])
-  useEffect(()=>{}) // 재 랜더링 마다 실행
-  useEffect(()=>{},[]) //mount 1회 토드실행
-  useEffect(()=>{},['변수']) //변수가 바뀔때마다 실행
-  useEffect(()=>{ // useEffect 실행전에 뭔가 실행하고 싶으면
-    return()=>{
-
-    }
-  },[]) 
-=======
   let product = props.shoes.find(x=>x.id === parseInt(id));
   let [tab, tabUpdate] = useState(0);
   let dispatch = useDispatch()
@@ -55,7 +29,6 @@ function Detail(props){
     localStorage.setItem('watched', JSON.stringify(item))
     }, []);
 
->>>>>>> hn
   return(
       <div className="container">
         {
@@ -80,12 +53,6 @@ function Detail(props){
               dispatch(addItem({id: product.id, name: product.title, count: 1}))
             }}>주문하기</button>
           </div>
-<<<<<<< HEAD
-        <div>
-        <YellowBtn bg="orange">오렌지색 버튼임</YellowBtn>
-        <YellowBtn bg="blue">파란색 버튼임</YellowBtn>
-        </div>
-=======
           <div>
           <Nav variant="tabs"  defaultActiveKey="link0">
           <Nav.Item>
@@ -103,7 +70,6 @@ function Detail(props){
         <YellowBtn bg="orange">오렌지색</YellowBtn>
         <YellowBtn bg="blue">파란색</YellowBtn>
     </div>
->>>>>>> hn
         </div> 
       </div> 
     )
