@@ -56,7 +56,7 @@ function App() {
 function Card(props){
   return (
     <div className="col-md-4">
-    <img src={props.shoes.image} width="80%" />
+    <img src={props.shoes.image} alt="shoes" width="80%" />
     <h4>{ props.shoes.title }</h4>
     <p>{ props.shoes.price }</p>
   </div>
