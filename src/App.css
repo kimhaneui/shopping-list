@@ -4,3 +4,21 @@
   background-size : cover;
   background-position : center;
 }
+.start {
+  opacity : 0
+}
+.end {
+  opacity : 1;
+  transition : opacity 0.5s;
+}
+.login{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.full{
+  width: 30%;
+  display: block;
+  padding-top: 20px;
+}
